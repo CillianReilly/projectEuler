@@ -20,5 +20,5 @@ k)phi:0.5*1+sqrt 5
 k)fibn:{(%sqrt 5)*(-). xexp[;y]y,1-y}[phi;]
 
 // Now we can just calculate the even Fibonacci numbers until we exceed 4 million and sum the result:
-q)sum{4000000>sum -2#x}{x,fibn 3*count x}/0
-k)+/{4000000>+/-2#x}{x,fibn 3*#x}/0
+q)sum -1_{4000000>last x}{x,fibn 3*count x}/0f
+k)+/-1_{4000000>*|x}{x,fibn 3*#x}/0
