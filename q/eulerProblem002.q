@@ -19,6 +19,6 @@ q)fibn:{7h$reciprocal[sqrt 5]*(-). xexp[;y]x,1-x}[phi;]
 k)phi:0.5*1+sqrt 5
 k)fibn:{7h$(%sqrt 5)*(-). xexp[;y]y,1-y}[phi;]
 
-// Now we can just calculate the even Fibonacci numbers until we exceed 4 millionand sum the result:
+// Now we can just calculate the even Fibonacci numbers until we exceed 4 million and sum the result:
 q)sum{4000000>sum -2#x}{x,fibn 3*count x}/0
 k)+/{4000000>+/-2#x}{x,fibn 3*#x}/0
