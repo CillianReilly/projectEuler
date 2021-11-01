@@ -14,6 +14,5 @@ k)f@*|&prime'f:fctr 600851475143
 
 // This can also be done far more eloquently by finding the smallest prime divisor and dividing out
 // We can then repeat the process on the result until the result is 1, at which point the previous result was the largest prime factor
-
 q)last -1_(not 1=){7h$x%mod[x;](2+)/3}\600851475143
 k)*|-1_(~1=){7h$x%{x-y*_x%y}[x;](2+)/3}\600851475143
