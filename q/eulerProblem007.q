@@ -7,7 +7,7 @@ q)9999{(not prime@)(2+)/2+x}/3
 k)9999{(~prime@)(2+)/2+x}/3
 
 // A more elegant method
-// A prime numbers greater than 3 are of the form 6k+1 or 6k-1. We can use this to narrow down prime candidates
+// All prime numbers greater than 3 are of the form 6k+1 or 6k-1. We can use this to narrow down prime candidates
 
 // A function to increment. If congruent to 5 mod 6, add 2, if congruent to 1 mod 6, add 4
 q)inc:{x+(x+3)mod 6}
