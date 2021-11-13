@@ -21,3 +21,7 @@ k)sieve:{,/{(sqrt[x]>y 0)&~0=#y:*|y}[x;]{(x[0],f;x[1]@&~0=x[1]-f*_x[1]%f:x[1;0])
 // Sieve all primes less than 2 million and sum
 q)sum sieve 2000000
 k)+/sieve 2000000
+
+
+// A slower implementation of the sieve that iterates over a boolean list
+//sieve:{2+where last{sqrt[x]>y 0}[x;]{(1+y[0];$[y[1]@y[0]-2;@[y[1]and not 0=(x%y[0])mod 1;y[0]-2;:;1b];y[1]])}[2+til x-2;]/(2;(x-2)#1b)}
