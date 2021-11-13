@@ -15,8 +15,10 @@ k)5+/(2000000>inc@){(~prime@)inc/inc x}\5
 // The Sieve of Eratosthenes iteratively removes composite numbers from the list of prime candidates up to the given limit
 
 // Function to implement the sieve:
-q)sieve:{raze{(sqrt[x]>y 0)and not 0=count y:last y}[x;]{(x[0],f;x[1]where not 0=x[1]mod f:x[1;0])}/(();2+til x-2)}
-k)sieve:{,/{(sqrt[x]>y 0)&~0=#y:*|y}[x;]{(x[0],f;x[1]@&~0=x[1]-f*_x[1]%f:x[1;0])}/(();2+!x-2)}
+// Generate a list of all numbers of the form 6k+1 or 6k-1 up to the limit
+// Iterate through this list, adding the first number to the list of primes and removing it and all multiples
+sieve:{raze{(sqrt[x]>y 0)and not 0=count y:last y}[x;]{(x[0],f;x[1]where not 0=x[1]mod f:x[1;0])}/(2 3;raze -1 1+/:6*1+til ceiling(x-5)%6)}
+k)sieve:{,/{(sqrt[x]>y 0)&~0=#y:*|y}[x;]{(x[0],f;x[1]@&~0=x[1]-f*_x[1]%f:x[1;0])}/(2 3;,/-1 1+/:6*1+!-_-(x-5)%6)}
 
 // Sieve all primes less than 2 million and sum
 q)sum sieve 2000000
