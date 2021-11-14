@@ -13,7 +13,7 @@ q)tri(500>count fctr tri::)(1+)/1
 k)tri(500>#fctr tri::)(1+)/1
 
 // We can speed up the computation by refactoring the fctr function to only return the count of the factors, rather than each factor
-// Note for perfect squares, the actual count is cfctr[x]-1 but this is accurate enough in this case
+// Note for perfect squares, the actual count is cfctr[x]-1 but it is accurate enough for this case
 q)cfctr:{2*sum 0=x mod til ceiling sqrt 1+x}
 k)cfctr:{2*+/0=x-l*_x%l:!-_-sqrt 1+x}
 
