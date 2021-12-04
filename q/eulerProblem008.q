@@ -8,3 +8,7 @@ k)|/{*/x[y+!13]}["J"$/:n;]'!#n
 // Use a moving window solution, faster than indexing
 q)max prd each{1_x,y}\[13#0;"J"$/:n]
 k)|/*/'{1_x,y}\[13#0;"J"$/:n]
+
+// Use prev and scan to produce the windows. Faster
+q)max prd 12 prev\"J"$/:n
+k)|/*/12(:':)\"J"$/:n
