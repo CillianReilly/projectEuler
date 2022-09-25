@@ -6,3 +6,7 @@ k)+/l@&|/0=l-/:x*_(l:1+!999)%/:x:3 5
 // We need to subtract the multiples of 15 once to avoid double counting
 q){x+y-z}.{sum y*1+til x div y}[999;]each 3 5 15
 k){x+y-z}.{+/y*1+!_x%y}[999;]'[3 5 15]
+
+// But it's most efficient to just use the sum of an arithmetic sequence formula
+q){sum .5*d*x*1+d:999 div x:x,neg prd x}3 5
+k){+/.5*d*x*1+d:_999%x:x,-*/x}3 5
