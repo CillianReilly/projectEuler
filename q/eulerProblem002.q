@@ -5,8 +5,8 @@ q)fib:{x,sum -2#x}
 k)fib:{x,+/-2#x}
 
 //Generate the list using the while overload of /, then filter:
-q)sum f where 0=mod[;2]f:{4000000>sum -2#x}fib/1 1
-k)+/f@&0=f-2*_%[;2]f:{4000000>+/-2#x}fib/1 1
+q)sum f where 0=mod[;2]f:-1_{4000000>last x}fib/1 1
+k)+/f@&0=f-2*_%[;2]f:-1_{4000000>*|x}fib/1 1
 
 // But, by the definition of the Fibonacci sequence, for an entry to be even, it must be that the two prior entries were odd.
 // So the sequence must be odd, odd, even, odd, odd, even... etc
